@@ -37,7 +37,7 @@ jobs:
         uses: garygrossgarten/github-action-ssh@release
         with:
           command: |
-                cd /mnt/odoo_14/addons/estimator/ 
+                cd /mnt/odoo_14/addons/estim/ 
                 git pull https://${{ secrets.MY_LOG }}:${{ secrets.MY_PASS }}@github.com/42LOC/estim.git --branch 14.0 
                 docker restart odoo_14
           host: ${{ secrets.HOST_DEV }}
