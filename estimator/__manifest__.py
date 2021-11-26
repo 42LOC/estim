@@ -17,6 +17,7 @@
     'version': '13.0',
     'support': 'intuit07@gmail.com, tarasfeshak@gmail.com',
     'license': 'GPL-3',
+    'images': ['static/description/banner.png'],
     'depends': [
         'base',
         'hr',
