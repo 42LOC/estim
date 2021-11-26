@@ -2,8 +2,8 @@ name: Deploy estimator to 42loc 15 branch
 
 on:
   push:
-#     paths-ignore:
-#       - ".github/**"
+    paths-ignore:
+      - ".github/**"
     branches:
       - 15.0
 
