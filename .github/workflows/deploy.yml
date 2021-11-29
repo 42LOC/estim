@@ -1,11 +1,11 @@
-name: Deploy estimator to 42loc 14 branch
+name: Deploy estimator to 42loc 15 branch
 
 on:
   push:
     paths-ignore:
       - ".github/**"
     branches:
-      - 14.0
+      - 15.0
 
 jobs:
   syntax-fix:
@@ -37,9 +37,9 @@ jobs:
         uses: garygrossgarten/github-action-ssh@release
         with:
           command: |
-                cd /mnt/odoo_14/addons/estim/ 
+                cd /mnt/odoo_15/addons/estim/ 
                 git pull https://${{ secrets.MY_LOG }}:${{ secrets.MY_PASS }}@github.com/42LOC/estim.git
-                docker restart odoo_14
+                docker restart odoo_15
           host: ${{ secrets.HOST_DEV }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASS_HOST_DEV }}
