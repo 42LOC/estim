@@ -5,7 +5,7 @@ on:
     paths-ignore:
       - ".github/**"
     branches:
-      - 14.0
+      - 13.0
 
 jobs:
   syntax-fix:
