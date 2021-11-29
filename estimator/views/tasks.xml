@@ -10,11 +10,11 @@
                     <xpath expr="//field[@name='tag_ids']" position="after">
                         <button name="estimation" string="Estimation" type="object" class="oe_highlight"/>
                     </xpath>
-                    <xpath expr="//field[@name='name']" position="attributes">
-                        <attribute name="context">{
-                                                    'default_project_id': project_id,
-                                                    'default_assigned_to': user_id}</attribute>
-                    </xpath>
+<!--                    <xpath expr="//field[@name='name']" position="attributes">-->
+<!--                        <attribute name="context">{-->
+<!--                                                    'default_project_id': project_id,-->
+<!--                                                    'default_assigned_to': user_id}</attribute>-->
+<!--                    </xpath>-->
             </field>
         </record>
 
