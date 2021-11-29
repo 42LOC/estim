@@ -1,4 +1,4 @@
-name: Deploy estimator to 42loc 14 branch
+name: Deploy estimator to 42loc 13 branch
 
 on:
   push:
@@ -13,10 +13,10 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: Set up Python 3.8
+      - name: Set up Python 3.6
         uses: actions/setup-python@v1
         with:
-          python-version: 3.8
+          python-version: 3.6
       - name: Install && use isort
         run: |
               pip install isort
@@ -37,9 +37,9 @@ jobs:
         uses: garygrossgarten/github-action-ssh@release
         with:
           command: |
-                cd /mnt/odoo_14/addons/estim/ 
+                cd /mnt/odoo_13/addons/estim/
                 git pull https://${{ secrets.MY_LOG }}:${{ secrets.MY_PASS }}@github.com/42LOC/estim.git
-                docker restart odoo_14
+                docker restart odoo_13
           host: ${{ secrets.HOST_DEV }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASS_HOST_DEV }}
