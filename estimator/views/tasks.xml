@@ -8,7 +8,8 @@
             <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
             <field name="arch" type="xml">
                     <xpath expr="//field[@name='tag_ids']" position="after">
-                        <button name="estimation" string="Estimation" type="object" class="oe_highlight"/>
+                        <button name="estimation" string="Estimation" type="object" class="oe_highlight"
+                        groups="estimator.group_manager_estimator,estimator.group_worker_estimator"/>
                     </xpath>
 <!--                    <xpath expr="//field[@name='name']" position="attributes">-->
 <!--                        <attribute name="context">{-->
@@ -364,7 +365,9 @@
         </record>
 
         <!-- Top menu item -->
-        <menuitem name="Task Estimation Project" id="estimator.menu_root" web_icon="estimator,static/description/banner.png"/>
+        <menuitem name="Task Estimation Project" id="estimator.menu_root"
+                  web_icon="estimator,static/description/banner.png"
+                  groups="estimator.group_manager_estimator,estimator.group_worker_estimator"/>
         <!-- menu categories -->
         <menuitem name="Project" id="estimator.menu_1" parent="estimator.menu_root"
                   action="estimator.project"/>
