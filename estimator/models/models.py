@@ -63,7 +63,14 @@ class Estimator(models.Model):
         compute="_compute_author_role",
         store=True,
     )
-
+    
+    def write(self, vals):
+        rec = super(Estimator, self).write(vals)
+        task_id = self.env['project.task'].search([('id', 'in', self.name.ids)])
+        if task_id:
+            task_id.dev_planned_hours = self.hours_real_time
+        return rec
+    
     @api.depends("author")
     def _compute_author_role(self):
         for rec in self:
