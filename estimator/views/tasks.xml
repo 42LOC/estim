@@ -326,7 +326,7 @@
                                         </t>
                                     </div>
                                 </div>
-                                    <div class="row" groups="estimator.group_manager_estimator">
+                                    <div class="row">
                                         <div class="col-6 medium_font" style="font-weight:bold;">
                                             <i class="fa fa-clock-o" style="color: blue"/>
                                             <field name="name"/>
@@ -337,7 +337,7 @@
                                     <div class="col-12 text-center">
                                         <field name="company"/>
                                     </div>
-                                        <div class="col-12">
+                                        <div class="col-12" groups="estimator.group_manager_estimator">
                                             <table width="100%">
                                                 <tr>
                                                     <td width="60%" style="border-bottom:1px dashed blue; border-top:1px dashed blue">
