@@ -326,7 +326,7 @@
                                         </t>
                                     </div>
                                 </div>
-                                    <div class="row">
+                                    <div class="row" groups="estimator.group_manager_estimator">
                                         <div class="col-6 medium_font" style="font-weight:bold;">
                                             <i class="fa fa-clock-o" style="color: blue"/>
                                             <field name="name"/>
