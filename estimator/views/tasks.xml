@@ -305,26 +305,67 @@
                     <templates>
                         <t t-name="kanban-box">
                             <div class="oe_kanban_global_click o_hr_kanban_record">
-                                <div class="o_kanban_card_header_title">
-                                    <field name="name"/>
-                                    <table>
-                                        <tr>
-                                            <td valign="top">
-                                                <field name="company"/>
-                                            </td>
-                                            <td>
-                                                <br></br>
-                                            </td>
-                                            <td align="right" groups="estimator.group_manager_estimator">
-                                                Perfect Hours - <field name="total_perfect_hours" widget="float_time"/>
-                                                <br></br>
-                                                Real Time - <field name="total_real_time" widget="float_time"/>
-                                                <br></br>
-                                                Low Perfor. - <field name="total_low_performance" widget="float_time"/>
-                                            </td>
-                                        </tr>
-                                    </table>
+                                <div class="o_dropdown_kanban dropdown">
+
+                                    <a class="dropdown-toggle o-no-caret btn"
+                                       role="button" data-toggle="dropdown" href="#"
+                                       aria-label="Dropdown menu"
+                                       title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable">
+                                            <a role="menuitem" type="edit"
+                                               class="dropdown-item">Edit
+                                            </a>
+                                        </t>
+                                        <t t-if="widget.deletable">
+                                            <a role="menuitem" type="delete"
+                                               class="dropdown-item">Delete
+                                            </a>
+                                        </t>
+                                    </div>
                                 </div>
+                                    <div class="row">
+                                        <div class="col-6 medium_font" style="font-weight:bold;">
+                                            <i class="fa fa-clock-o" style="color: blue"/>
+                                            <field name="name"/>
+                                        </div>
+                                        <div class="col-6 small_font text-right">
+                                            <field name="create_date"/>
+                                        </div>
+                                    <div class="col-12 text-center">
+                                        <field name="company"/>
+                                    </div>
+                                        <div class="col-12">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td width="60%" style="border-bottom:1px dashed blue; border-top:1px dashed blue">
+                                                        <label for="total_perfect_hours">Perfect Hours</label>
+                                                    </td>
+                                                    <td width="40%" align="right" style="border-left:1px dashed blue;border-bottom:1px dashed blue; border-top:1px dashed blue">
+                                                        <field name="total_perfect_hours" widget="float_time"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="60%" style="border-bottom:1px dashed blue">
+                                                        <label for="total_real_time">Real Time</label>
+                                                    </td>
+                                                    <td width="40%" align="right" style="border-left:1px dashed blue; border-bottom:1px dashed blue">
+                                                        <field name="total_real_time" widget="float_time"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="60%" style="border-bottom:1px dashed blue">
+                                                        <label for="total_low_performance">Low Performance</label>
+                                                    </td>
+                                                    <td width="40%" align="right" style="border-left:1px dashed blue; border-bottom:1px dashed blue">
+                                                        <field name="total_low_performance" widget="float_time"/>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
                             </div>
                         </t>
                     </templates>
