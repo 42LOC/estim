@@ -160,7 +160,7 @@ class Project(models.Model):
     _description = "Project"
 
     name = fields.Many2one("project.project", string="Project:")
-    company = fields.Many2one("res.partner", string="Company name", required=True)
+    company = fields.Many2one("res.partner", string="Company name")
     create_date = fields.Datetime(string="Date of creation")
     note = fields.Text(string="Description")
     total_perfect_hours = fields.Float(
@@ -269,8 +269,9 @@ class ProjectInherit(models.Model):
         author = False
         work_units = self.env["estimator.command"].search([])
         for rec in work_units:
-            if self.user_id.name == rec.name.name:
-                author = rec.id
+            for user in self.user_ids:
+                if user.name == rec.name.name:
+                    author = rec.id
         if not author:
             return {
                 "name": _("First add this user into your command"),
